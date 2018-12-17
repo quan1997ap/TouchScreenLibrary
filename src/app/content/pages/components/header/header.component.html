@@ -1,1 +1,34 @@
-header
+<div class="row top">
+    <div class="col-md-9 col-sm-8 cot1">
+        <div class="row header-section">
+            <div class="col-md-3 logo">
+                <img src="assets/svg/UEH-logo.svg" alt="" class="logo-img">
+            </div>
+            <div class="col-md-9 header header-text">
+                <span class="header-title">
+                    <a routerLink="/">Floor</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-4 cot2">
+        <div class="row header-section">
+            <div class="col-md-4 flags">
+                <!-- Note: toggle flag -->
+                <img src="assets/svg/Vie-flag.svg" (click)="changeLanguage('en')" *ngIf="language=='vi'" class="flag-lang">
+                <img src="assets/svg/Eng-flag.svg" (click)="changeLanguage('vi')"  *ngIf="language=='en'"  class="flag-lang">
+            </div>
+            <div class="row col-md-8 cover-time">
+
+                <div class="col-md-5 datemonth">
+                    <div id="day">{{currentTime.day}}</div>
+                    <div id="month">{{currentTime.month}}</div>
+                </div>
+                <div class="col-md-7 clock-frame">
+                    <div id="clock" class="clock-time">{{currentTime.clock}}</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

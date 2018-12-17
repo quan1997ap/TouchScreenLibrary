@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: ChaletBold;
+    src: url(assets/fonts/Linh-Chalet-Bold.ttf);
+}
+
+@font-face {
+    font-family: ChaletBlack;
+    src: url(assets/fonts/Linh-Chalet-Black.ttf);
+}
+body {
+    font-family: "Roboto";
+    font-size: 16px;
+}

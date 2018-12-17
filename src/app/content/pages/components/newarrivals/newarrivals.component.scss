@@ -1,0 +1,428 @@
+.container-map{
+    height: 75vh;
+    margin: 15px 0;
+    padding: 0 15px;
+    .left-content{
+        height: 100%;
+        padding: 0 0;
+        margin: 0 0;
+        .menu-left{
+            display: flex;
+            align-items: flex-end;
+            padding: 0 0;
+            .left-menu {
+                list-style: none;
+                margin-left: 0;
+                text-align: left;
+                padding-left: 0px;
+                li{
+                    margin-bottom: 1rem;
+                    .btn {
+                        color: #1d4363;
+                        border-radius: 25%;
+                    }
+                    .btn:not(:disabled):not(.disabled) {
+                        cursor: pointer;
+                    }
+                    .btn-normal {
+                        background: #cfcfcf;
+                        width: 2.5em;
+                        height: 2.5em;
+                    }
+                    .menu-button {
+                        margin-left: .5em;
+                    }
+                    .menu-button {
+                        margin-left: .5em;
+                    }
+                }
+            }
+
+        }
+        .mapdata{
+            .cover-svg{
+                height: 100%;
+                overflow: hidden;
+                width: 100%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .svg-custom{
+                height: 60vh;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: z-index  0.5s step-end, opacity 0.5s linear;
+                transform: scale(0.2);
+                transition: all 1s;
+                margin: 6vh 0;
+            }
+            .active-zone{
+                z-index: 1;
+                transform: scale(1);
+            }
+            #heatmap-2d{
+              .cls-1 {
+                  fill: none;
+              }
+
+              .cls-1,
+              .cls-10,
+              .cls-2,
+              .cls-4,
+              .cls-5,
+              .cls-6,
+              .cls-7,
+              .cls-8,
+              .cls-9 {
+                  stroke: #000;
+                  stroke-miterlimit: 10;
+              }
+
+              .cls-2 {
+                  font-size: 5.94px;
+                  font-family: MyriadPro-Regular, Myriad Pro;
+              }
+
+              .cls-3 {
+                  letter-spacing: 0.01em;
+              }
+
+              .cls-5 {
+                  fill: #c3e2f6;
+              }
+
+              .cls-10,
+              .cls-5,
+              .cls-6,
+              .cls-7,
+              .cls-8,
+              .cls-9 {
+                  opacity: 0.42;
+              }
+
+              .cls-6 {
+                  fill: #f9c0b6;
+              }
+
+              .cls-7 {
+                  fill: #fad3e4;
+              }
+
+              .cls-8 {
+                  fill: #f7f4c4;
+              }
+
+              .cls-9 {
+                  fill: #dbeabc;
+              }
+
+              .cls-10 {
+                  fill: #b9bdde;
+              }
+            }
+            #floor{
+                cursor: pointer;
+                height: 55vh;
+                width: 100%;
+                .cls-1 {
+                    fill: #8c8b8b;
+                  }
+
+                  .cls-2 {
+                    fill: #e0e0e0;
+                  }
+
+                  .cls-3 {
+                    fill: #c1bfbf;
+                  }
+
+                  .cls-4 {
+                    fill: #ddd;
+                  }
+
+                  .cls-5 {
+                    fill: #aaa9a9;
+                  }
+
+                  .cls-6 {
+                    fill: #eaeaea;
+                  }
+
+                  .cls-7 {
+                    fill: #cecccc;
+                  }
+
+                  .cls-8 {
+                    fill: #b2b2b2;
+                  }
+
+                  .cls-9 {
+                    fill: #9b9b9b;
+                  }
+
+                  .cls-10 {
+                    fill: #0581dd;
+                  }
+
+                  .cls-11,
+                  .cls-13 {
+                    font-size: 12.2px;
+                    fill: #fff;
+                    font-family: Helvetica, Helvetica;
+                  }
+
+                  .cls-12 {
+                    fill: #009e0b;
+                    opacity: 0.57;
+                  }
+
+                  .cls-13 {
+                    letter-spacing: -0.05em;
+                  }
+            }
+
+            #zone-a{
+                cursor: pointer;
+                .cls-1 {
+                    fill: #8c8b8b;
+                  }
+  
+                  .cls-2 {
+                    fill: #e8e8e8;
+                  }
+  
+                  .cls-3 {
+                    fill: #cecccc;
+                  }
+  
+                  .cls-4 {
+                    fill: #1784ce;
+                  }
+  
+                  .cls-5 {
+                    fill: #b6b6b7;
+                  }
+  
+                  .cls-6 {
+                    opacity: 0.2;
+                  }
+  
+                  .cls-7 {
+                    fill: #aaadaf;
+                  }
+  
+                  .cls-8 {
+                    fill: #ff8c69;
+                    stroke: #e0e0e0;
+                    stroke-miterlimit: 10;
+                  }
+  
+                  .cls-9 {
+                    font-size: 9.05px;
+                    fill: #fff;
+                    font-family: Helvetica, Helvetica;
+                  }
+            }
+
+            #zone-b{
+                cursor: pointer;
+                .cls-1 {
+                    fill: #e8e8e8;
+                  }
+  
+                  .cls-2 {
+                    fill: #8c8b8b;
+                  }
+  
+                  .cls-3 {
+                    fill: #aaadaf;
+                    stroke: #fff;
+                    stroke-miterlimit: 10;
+                  }
+  
+                  .cls-4 {
+                    fill: #9e9d9d;
+                  }
+            }
+
+            #zone-c{
+                cursor: pointer;
+                .cls-1 {
+                    fill: #8c8b8b;
+                  }
+  
+                  .cls-2 {
+                    fill: #e8e8e8;
+                  }
+  
+                  .cls-3 {
+                    fill: #9e9d9d;
+                  }
+  
+                  .cls-4 {
+                    fill: #b7b7b7;
+                  }
+  
+                  .cls-5 {
+                    fill: #aaadaf;
+                    stroke: #fff;
+                  }
+  
+                  .cls-5,
+                  .cls-8 {
+                    stroke-miterlimit: 10;
+                  }
+  
+                  .cls-6 {
+                    fill: #a5a5a5;
+                  }
+  
+                  .cls-7 {
+                    fill: #cecccc;
+                  }
+  
+                  .cls-8 {
+                    fill: none;
+                    stroke: #282121;
+                  }
+  
+                  .cls-9 {
+                    fill: #b6b6b7;
+                  }
+            }
+
+            #zone-d{
+                cursor: pointer;
+                .cls-1 {
+                    fill: #e8e8e8;
+                  }
+  
+                  .cls-2 {
+                    fill: #8c8b8b;
+                  }
+  
+                  .cls-3 {
+                    fill: #b7b7b7;
+                  }
+  
+                  .cls-4 {
+                    fill: #aaadaf;
+                    stroke: #fff;
+                    stroke-miterlimit: 10;
+                  }
+  
+                  .cls-5 {
+                    fill: #bababa;
+                  }
+  
+                  .cls-6 {
+                    fill: #cecccc;
+                  }
+            }
+
+            #zone-e{
+                cursor: pointer;
+                .cls-1,
+                .cls-2 {
+                  fill: #aaadaf;
+                }
+
+                .cls-1 {
+                  stroke: #fff;
+                  stroke-miterlimit: 10;
+                }
+
+                .cls-3 {
+                  fill: #b7b7b7;
+                }
+
+                .cls-4 {
+                  fill: #cecccc;
+                }
+
+                .cls-5 {
+                  fill: #e8e8e8;
+                }
+            }
+
+            .svg-floor-custom{
+                height: 55vh;
+                width: 100%;
+            }
+
+            // fix err embed svg in angular
+            .fix-err-embed-svg{
+              height: 100%;
+              width: 100%;
+              // visibility: hidden;
+            }
+            /*style heat map*/
+            #container-heatmap {
+                height: 55vh;
+                width: fit-content;
+                margin: 0 auto;
+                position: relative;
+                border: 1px solid #ccc;
+                max-width: 1000px;
+            }
+            .heatmap{
+                    position: absolute;
+                    height: 100% !important;
+                    width: 100% !important;
+            }
+            .heatmap-canvas{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+            #svg10{
+                width: 100%;
+                position: absolute;
+                z-index: 1000;
+            }
+            
+            #cover-heatmap{
+                position:absolute;
+                width:100%;
+                height:100%;
+                z-index: 900;
+                top: 0;
+                
+            }
+            .cover-heatmap{
+              position:absolute;
+              width:100%;
+              height:100%;
+              z-index: 900;
+              top: 0;
+              #cover-heatmap-anhhoa{
+                .heatmap-unit {
+                  float: left;
+                  opacity: 0.7;
+                }
+              }
+            }
+            
+            #info{
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                background: green;
+                height: 100px;
+            }
+            
+        }
+    }
+    .right-content{
+        height: calc(90vh - 45px);
+        background: red;
+        margin: 0 -15px;
+        border-radius: 10px;
+    }
+    
+}

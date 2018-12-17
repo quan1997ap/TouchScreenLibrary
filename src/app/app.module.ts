@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { TranslateModule} from '@ngx-translate/core';
+import { HttpClientModule} from '@angular/common/http';
+import { Component } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -10,7 +13,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    // configure the imports 
+    HttpClientModule,
+    TranslateModule.forRoot()
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
