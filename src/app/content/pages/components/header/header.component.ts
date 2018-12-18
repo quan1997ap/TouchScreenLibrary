@@ -24,13 +24,13 @@ export class HeaderComponent implements OnInit, AfterContentInit {
     this.creatClockRealTime('vi');
     this.translationService.getSelectedLanguage().subscribe(lang => {
       this.language = lang;
-      console.log(lang);
+      this.creatClockRealTime(this.language);
 		})
   }
 
   ngAfterContentInit() {
     setInterval(() => {
-      this.creatClockRealTime('vi');
+      this.creatClockRealTime(this.language);
       this.cd.detectChanges();
     }, 5000);
   }
@@ -50,9 +50,9 @@ export class HeaderComponent implements OnInit, AfterContentInit {
   }
 
   changeLanguage(lang: string) {
-    console.log('a')
 		this.translationService.setLanguage(lang);
     this.language = lang;
+    this.creatClockRealTime(this.language);
   }
   
 }

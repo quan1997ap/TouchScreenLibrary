@@ -10,6 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class DashboardComponent implements OnInit {
   currentZoneId: string;
   dataToSideBar: boolean = true;
+  aqiData: any;
 
   // dataToSideBar has 3 property 
   // StateGlossaryZoneName : true <=> show ; false <=> hidden
@@ -113,4 +114,9 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+
+  // main event
+  showAQI(){
+    this.aqiData = 1;
+  }
 }

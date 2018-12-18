@@ -1,20 +1,69 @@
 <div class="row container-map">
     <div class="col-md-9 col-sm-8">
         <div class="row left-content">
-            <div class="menu-left col-sm-3 col-md-2  col-lg-2">
+            <div class="menu-left col-sm-3 col-md-1  col-lg-1">
                 <ul class="left-menu">
-                   left menu
+                    <li>
+                        <button type="button" class="btn btn-primary" (click)="toPrePage()"><i class="fas fa-undo-alt fico"></i></button>
+                    </li>
                 </ul>
             </div>
-            <div class="map col-sm-9 col-md-10  col-lg-10 mapdata">
-              
-                center
+            <div class="col-sm-9 col-md-11  col-lg-11 center book-detail">
+
+                <p class="book-bigtitle">NEW ARIVALS BOOK</p>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="../../../../../assets/images/Book1.jpg" alt="" class="book-slider-img">
+                                <p class="book-name">Out of the box Tiêu đề của
+                                    sách</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="../../../../../assets/images/Book1.jpg" alt="" class="book-slider-img">
+                                <p class="book-name">Out of the box</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="../../../../../assets/images/Book1.jpg" alt="" class="book-slider-img">
+                                <p class="book-name">Out of the box</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="../../../../../assets/images/Book1.jpg" alt="" class="book-slider-img">
+                                <p class="book-name">Out of the box</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="../../../../../assets/images/Book1.jpg" alt="" class="book-slider-img">
+                                <p class="book-name">Out of the box</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="../../../../../assets/images/Book1.jpg" alt="" class="book-slider-img">
+                                <p class="book-name">Out of the box</p>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <!-- <div class="swiper-button-next"></div> -->
+                    <!-- <div class="swiper-button-prev"></div> -->
+                </div>
+
             </div>
         </div>
     </div>
     <div class="col-md-3 col-sm-4">
         <div class="right-content">
-            right
+                <app-infonewarrival [infoBookDetail] = "infomationBookDetail"></app-infonewarrival>
         </div>
     </div>
 </div>

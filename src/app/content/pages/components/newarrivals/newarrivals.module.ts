@@ -1,3 +1,4 @@
+import { InfoNewArrivalComponent } from './infonewarrival/infonewarrival.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NewArrivalsComponent } from './newarrivals.component';
@@ -9,6 +10,9 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [],
-  declarations: [NewArrivalsComponent],
+  declarations: [
+    NewArrivalsComponent,
+    InfoNewArrivalComponent
+  ],
 })
 export class NewArrivalsModule { }

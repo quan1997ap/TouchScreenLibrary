@@ -7,7 +7,7 @@
                         <button type="button" class="btn btn-primary" (click)="back()"><i class="fas fa-undo-alt fico"></i></button>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-menu btn-normal" (click)="ShowAQI()"><i class="fab fa-envira fico"></i></button><span
+                        <button type="button" class="btn btn-menu btn-normal" (click)="showAQI()"><i class="fab fa-envira fico"></i></button><span
                             class="menu-button">{{'DASHBOARD.AQI' | translate }}</span>
                     </li>
 
@@ -56,7 +56,7 @@
                             <rect id="heat-map-zonee" class="cls-6" x="16.46" y="208.76" width="190.58" height="100.45"
                                 transform="translate(224.72 517.45) rotate(179.73)" />
 
-                            <image class="fix-err-embed-svg " x="0" y="0" xlink:href="assets/svg/floor-2d.svg"></image>
+                            <image class="fix-err-embed-svg " x="0" y="0" xlink:href="assets/lib/svg/floor-2d.svg"></image>
                             <foreignobject class="node" x="340" y="350" width="30" height="30">
                                 <!-- <div style="border:1px #FF8C69 solid" class="border-zone" id="aqi-a"> -->
                                 <!-- </div> -->
@@ -307,6 +307,7 @@
     <div class="col-md-3 col-sm-4">
         <div class="right-content">
             <app-sidebar [statusSideBar] = "dataChangeSideBar"></app-sidebar>
+            <p> {{aqiData}}</p>
         </div>
     </div>
 </div>

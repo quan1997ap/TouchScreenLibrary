@@ -1,0 +1,35 @@
+.right-menu {
+    list-style: none;
+    margin-left: 0;
+    text-align: left;
+    padding-left: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.zone-sub-list,.zone-bcde-index{
+    margin-top: 1em;
+}
+.right-menu .btn {
+    width: 2.5em;
+    height: 2.5em;
+    cursor: pointer;
+    margin: 0px 15px 15px 15px ;
+}
+
+.fico {
+    font-size: 1.5rem;
+    width: 1em;
+    height: 1.2em;
+    margin: auto;
+    line-height: 1.5 !important;
+}
+
+.display-default-none{
+    display: none;
+}
+
+.btn-room-avaiable{
+    background-color: #1784ce;
+}
+.btn-room-occupied{
+    background-color: #ff8c69;
+}

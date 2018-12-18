@@ -12,7 +12,7 @@ export const locale = {
     },
     MENUFOOTER: {
       MAP: 'MAP',
-      BOOK: 'BOOK',
+      BOOK: 'NEW ARRIVALS',
       INFOMATION: 'INFOMATION'
     },
     DASHBOARD: {
