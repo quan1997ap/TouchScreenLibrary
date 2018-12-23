@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common"
 import { ErrorPageComponent } from './snippets/error-page/error-page.component';
 import {TranslateModule} from '@ngx-translate/core';
+
 @NgModule({
   declarations: [
     PagesComponent,

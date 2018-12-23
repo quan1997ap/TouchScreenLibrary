@@ -1,18 +1,39 @@
-import { InfoNewArrivalComponent } from './infonewarrival/infonewarrival.component';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NewArrivalsComponent } from './newarrivals.component';
-
-const routes: Routes = [
-  {path: '', component: NewArrivalsComponent}
-]
+import { NewArrivalsDetailComponent } from './newarrivals-detail.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    TranslateModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: NewArrivalsComponent
+      },
+      {
+        path: 'detail',
+        children: [
+          {
+            path: ':id',
+            component: NewArrivalsDetailComponent
+          },
+          {
+            path: '',
+            redirectTo: '/newarrivals',
+            pathMatch: 'full'
+          }
+        ]
+      }
+    ])
+  ],
   exports: [],
   declarations: [
     NewArrivalsComponent,
-    InfoNewArrivalComponent
+    NewArrivalsDetailComponent
   ],
 })
 export class NewArrivalsModule { }

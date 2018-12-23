@@ -1,86 +1,83 @@
 <div class="menu-right">
+    <!-- stateGlossaryZoneName: list zone -->
+
   <ul id="zone-main-list" *ngIf= "statusSideBar.stateGlossaryZoneName == true" [ngClass]="{'right-menu zone-sub-list': true }">
     <li>
-      <button type="button" class="btn btn-menu btn-normal">A</button><span class="menu-button">Meeting room</span>
+      <button type="button" class="btn btn-menu btn-normal">A</button><span class="menu-button">{{'DASHBOARDSIDEBAR.MEETINGROOM' | translate}}</span>
     </li>
 
     <li>
-      <button type="button" class="btn btn-menu btn-normal">B</button><span class="menu-button">Comfortable Sofa</span>
+      <button type="button" class="btn btn-menu btn-normal">B</button><span class="menu-button">{{'DASHBOARDSIDEBAR.COMFORTABLESOFA' | translate}}</span>
     </li>
     <li>
-      <button type="button" class="btn btn-menu btn-normal">C</button><span class="menu-button">Mini Auditorium &
-        Reading Area</span>
+      <button type="button" class="btn btn-menu btn-normal">C</button><span class="menu-button">{{'DASHBOARDSIDEBAR.READINGAREA' | translate}}</span>
     </li>
     <li>
-      <button type="button" class="btn btn-menu btn-normal">D</button><span class="menu-button">Study Carrels &
-        Bookshelves </span>
+      <button type="button" class="btn btn-menu btn-normal">D</button><span class="menu-button">{{'DASHBOARDSIDEBAR.STUDYCARRELS' | translate}} </span>
     </li>
     <li>
-      <button type="button" class="btn btn-menu btn-normal">E</button><span class="menu-button">Ask-Us-Now / Librarian
-      </span>
+      <button type="button" class="btn btn-menu btn-normal">E</button><span class="menu-button">{{'DASHBOARDSIDEBAR.LIBRARIAN' | translate}} </span>
     </li>
 
   </ul>
 
   <ul id="note-zonecolor" *ngIf= "statusSideBar.zoneId == 'floor'" [ngClass]="{'right-menu zone-sub-list': true }">
     <li>
-      <button type="button" class="btn btn-menu btn-success">W</button><span class="menu-button">WC</span>
+      <button type="button" class="btn btn-menu btn-wc">W</button><span class="menu-button">{{'DASHBOARDSIDEBAR.WC' | translate}}</span>
     </li>
     <li>
-      <button type="button" class="btn btn-menu btn-primary">X</button><span class="menu-button">Exit</span>
+      <button type="button" class="btn btn-menu btn-exit">X</button><span class="menu-button">{{'DASHBOARDSIDEBAR.EXIT' | translate}}</span>
     </li>
     <li>
-      <button type="button" class="btn btn-menu btn-info">S</button><span class="menu-button">Bookshelf</span>
+      <button type="button" class="btn btn-menu btn-bookshelf">S</button><span class="menu-button">{{'DASHBOARDSIDEBAR.BOOKSHELF' | translate}}</span>
     </li>
   </ul>
   
+
+  <!-- if activeZONE is zone a -->
+  <ul id="zone-a128" *ngIf= "statusSideBar.stateGlossaryZoneName == false && statusSideBar.zoneId == 'zone-a' " [ngClass]="{'right-menu zone-bcde-index': true}" class="right-menu zone-bcde-index">
+    <li>
+      <button type="button" class="btn btn-menu">A1</button><span class="menu-button">123 {{'DASHBOARDSIDEBAR.SEATS' | translate}}</span>
+    </li>
+    <li>
+      <button type="button" class="btn btn-menu">A2</button><span class="menu-button">123 {{'DASHBOARDSIDEBAR.SEATS' | translate}}</span>
+    </li>
+    <li>
+      <button type="button" class="btn btn-menu">A3</button><span class="menu-button">123 {{'DASHBOARDSIDEBAR.SEATS' | translate}}</span>
+    </li>
+    <li>
+      <button type="button" class="btn btn-menu">A4</button><span class="menu-button">123 {{'DASHBOARDSIDEBAR.SEATS' | translate}}</span>
+    </li>
+    <li>
+      <button type="button" class="btn btn-menu">A5</button><span class="menu-button">123 {{'DASHBOARDSIDEBAR.SEATS' | translate}}</span>
+    </li>
+    <li>
+      <button type="button" class="btn btn-menu">A6</button><span class="menu-button">123 {{'DASHBOARDSIDEBAR.SEATS' | translate}}</span>
+    </li>
+    <li>
+      <button type="button" class="btn btn-menu">A7</button><span class="menu-button">123 {{'DASHBOARDSIDEBAR.SEATS' | translate}}</span>
+    </li>
+    <li>
+      <button type="button" class="btn btn-menu">A8</button><span class="menu-button">123 {{'DASHBOARDSIDEBAR.SEATS' | translate}}</span>
+    </li>
+  </ul>
   <ul id="note-status-room" *ngIf= "statusSideBar.zoneId == 'zone-a'" [ngClass]="{'right-menu zone-sub-list': true }">
-    <li>
-      <button type="button" class="btn btn-menu btn-room-occupied"></button><span class="menu-button">WC</span>
-    </li>
-    <li>
-      <button type="button" class="btn btn-menu btn-room-avaiable"></button><span class="menu-button">Exit</span>
-    </li>
+      <li>
+        <button type="button" class="btn btn-menu btn-room-occupied"></button><span class="menu-button">{{'DASHBOARDSIDEBAR.ROOMOCCUPIED' | translate}}</span>
+      </li>
+      <li>
+        <button type="button" class="btn btn-menu btn-room-avaiable"></button><span class="menu-button">{{'DASHBOARDSIDEBAR.ROOMAVAILABLE' | translate}}</span>
+      </li>
   </ul>
 
-  <ul id="zone-a128" *ngIf= "statusSideBar.stateGlossaryZoneName == false" [ngClass]="{'right-menu zone-bcde-index': true}" class="right-menu zone-bcde-index display-default-none">
+  <!--if activeZONE is  zone b c d e  -->
+  <ul id="zone-bcde" *ngIf= "statusSideBar.stateGlossaryZoneName == false && statusSideBar.zoneId != 'zone-a'" [ngClass]="{'right-menu zone-bcde-index': true}">
     <li>
-      <button type="button" class="btn btn-menu">A1</button><span class="menu-button">123 seats</span>
+      <button type="button" class="btn btn-menu"><i class="fas fa-user"></i></button><span class="menu-button">{{'DASHBOARDSIDEBAR.PEOPLE' | translate}}: 111
+        </span>
     </li>
     <li>
-      <button type="button" class="btn btn-menu">A2</button><span class="menu-button">123 seats</span>
-    </li>
-    <li>
-      <button type="button" class="btn btn-menu">A3</button><span class="menu-button">123 seats</span>
-    </li>
-    <li>
-      <button type="button" class="btn btn-menu">A4</button><span class="menu-button">123 seats</span>
-    </li>
-    <li>
-      <button type="button" class="btn btn-menu">A5</button><span class="menu-button">123 seats</span>
-    </li>
-    <li>
-      <button type="button" class="btn btn-menu">A6</button><span class="menu-button">123 seats</span>
-    </li>
-    <li>
-      <button type="button" class="btn btn-menu">A7</button><span class="menu-button">123 seats</span>
-    </li>
-    <li>
-      <button type="button" class="btn btn-menu">A8</button><span class="menu-button">123 seats</span>
-    </li>
-    <li>
-      <button type="button" class="btn btn-menu"><i class="fas fa-chair"></i></button><span class="menu-button">Seats:
-        456</span>
-    </li>
-  </ul>
-
-  <ul id="zone-bcde" *ngIf= "statusSideBar.stateGlossaryZoneName == false" [ngClass]="{'right-menu zone-bcde-index': true}">
-    <li>
-      <button type="button" class="btn btn-menu"><i class="fas fa-user"></i></button><span class="menu-button">People:
-        123</span>
-    </li>
-    <li>
-      <button type="button" class="btn btn-menu"><i class="fas fa-chair"></i></button><span class="menu-button">Seats:
+      <button type="button" class="btn btn-menu"><i class="fas fa-chair"></i></button><span class="menu-button">{{'DASHBOARDSIDEBAR.SEATS' | translate}}:
         456</span>
     </li>
   </ul>

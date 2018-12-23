@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { EventEmitter, Component, OnInit, ChangeDetectionStrategy, Output } from '@angular/core';
 
+EventEmitter
 @Component({
   selector: 'm-pages',
   templateUrl: './pages.component.html',
@@ -7,7 +8,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 
 export class PagesComponent implements OnInit {
+  footerTitle : string;
   constructor() { }
 
   ngOnInit() { }
+
 }

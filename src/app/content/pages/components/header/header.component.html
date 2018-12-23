@@ -5,20 +5,22 @@
                 <img  routerLink="/" src="assets/lib/svg/UEH-logo.svg" alt="" class="logo-img">
             </div>
             <div class="col-md-9 header header-text">
-                <span class="header-title">
-                    <a routerLink="/">Floor</a>
+                <span class="header-title"> 
+                    <a >
+                        {{headerTitle |  translate:translationParameters }}
+                    </a>
                 </span>
             </div>
         </div>
     </div>
     <div class="col-md-3 col-sm-4 cot2">
-        <div class="row header-section">
+        <div class="row header-section" style="padding-bottom: 10px;">
             <div class="col-md-4 flags">
                 <!-- Note: toggle flag -->
                 <img src="assets/lib/svg/Vie-flag.svg" (click)="changeLanguage('en')" *ngIf="language=='vi'" class="flag-lang">
                 <img src="assets/lib/svg/Eng-flag.svg" (click)="changeLanguage('vi')"  *ngIf="language=='en'"  class="flag-lang">
             </div>
-            <div class="row col-md-8 cover-time">
+            <div class="row col-md-8 cover-time" style="padding-right: 0">
 
                 <div class="col-md-5 datemonth">
                     <div id="day">{{currentTime.day}}</div>
@@ -26,6 +28,15 @@
                 </div>
                 <div class="col-md-7 clock-frame">
                     <div id="clock" class="clock-time">{{currentTime.clock}}</div>
+                    <p class="time-open">
+                        <i class="far fa-clock"></i> 
+                        <span>
+                            {{'HEADER.HOURS' | translate }}
+                        </span>
+                        <span>
+
+                        </span>
+                    </p>
                 </div>
 
             </div>

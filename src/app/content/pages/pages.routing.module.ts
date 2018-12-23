@@ -11,18 +11,21 @@ const routes: Routes = [
     children: [
       {
 				path: '',
-				loadChildren: './components/dashboard/dashboard.module#DashboardModule'
+        loadChildren: './components/dashboard/dashboard.module#DashboardModule',
+        data: {title: 'MAP'}
       },
       {
 				path: 'newarrivals',
-        loadChildren: './components/newarrivals/newarrivals.module#NewArrivalsModule'
+        loadChildren: './components/newarrivals/newarrivals.module#NewArrivalsModule',
+        data: {title: 'NEW ARRIVALS'}
       },
       {
 				path: 'infomations',
-        loadChildren: './components/infomations/infomations.module#InfomationsModule'
+        loadChildren: './components/infomations/infomations.module#InfomationsModule',
+        data: {title: 'INFOMATION'}
       },
       {
-        path: '404',
+        path: '**',
         component: ErrorPageComponent
       },
       {

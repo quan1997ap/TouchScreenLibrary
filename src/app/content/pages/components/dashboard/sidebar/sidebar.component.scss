@@ -4,6 +4,8 @@
     text-align: left;
     padding-left: 0;
     font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    color: #333;
 }
 .zone-sub-list,.zone-bcde-index{
     margin-top: 1em;
@@ -12,7 +14,8 @@
     width: 2.5em;
     height: 2.5em;
     cursor: pointer;
-    margin: 0px 15px 15px 15px ;
+    margin: 5px 15px 10px 15px;
+    font-weight: 700;
 }
 
 .fico {
@@ -27,6 +30,15 @@
     display: none;
 }
 
+.btn-wc{
+    background-color: #0581dd;
+}
+.btn-exit{
+    background-color: #009e0b;
+}
+.btn-bookshelf{
+    background-color: #ae04b7;
+}
 .btn-room-avaiable{
     background-color: #1784ce;
 }

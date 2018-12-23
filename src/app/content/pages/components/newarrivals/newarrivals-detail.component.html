@@ -1,0 +1,70 @@
+<div class="row container-map">
+    <div class="col-md-9 col-sm-8">
+        <div class="row left-content">
+            <div class="menu-left col-sm-3 col-md-1  col-lg-1">
+                <ul class="left-menu">
+                    <li>
+                        <button type="button" class="btn btn-primary" routerLink="/newarrivals"><i class="fas fa-undo-alt fico"></i></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-md-1  col-lg-11 center book-detail" id="carousel-book">
+
+                <div class="row book-frame">
+                    <div class="col-md-3">
+                        <div class="book-img">
+                            <img src="assets/images/Book1.jpg" alt="" class="book-thumb">
+                        </div>
+                    </div>
+                    <div class="col-md-9 book-text">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <p class="book-title">Tiêu đề của sách</p>
+                                <p class="book-subtitle">Tác giả của sách</p>
+                                <p class="book-status">
+                                    <ul class="book-info">
+                                        <li><strong>Status:</strong> Available, In-Labrary use only</li>
+
+                                        <li><strong>Location:</strong> Campus 3</li>
+                                    </ul>
+                            
+                            </div>
+                            <div class="col-md-3">
+                                <div class="book-img">
+                                    <img src="./img/QRcode.png" alt="" class="book-qrcode ">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <p class="book-resume">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit, diam ac aliquam
+                            mollis, ipsum sem imperdiet sem, quis interdum lacus mauris ac turpis. Phasellus cursus
+                            imperdiet libero, et congue velit molestie vel. Sed dictum risus turpis, non ullamcorper
+                            lectus sodales tempus. Fusce velit ex, interdum vel scelerisque in, sagittis in augue.
+                            Vivamus at massa ante. Aliquam lorem orci, cursus eget mattis nec, rhoncus eget urna. Sed
+                            ipsum mauris, luctus at lectus quis, mattis cursus lectus. Etiam a tellus enim. Sed ut elit
+                            pellentesque metus vehicula imperdiet quis a ex. Donec posuere aliquet nibh, ac tristique
+                            quam lacinia sit amet. Quisque mauris diam, rhoncus eu ante in, maximus consequat tellus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-4">
+        <div class="right-content">
+            <p class="info-book">
+                <span class="text-info-detail">
+                    <i class="fas fa-book icon"></i> {{ 'NEWARRIVALS.BOOKINSHELF' | translate}}
+                </span>
+            </p>
+            <p class="info-book">
+                <span class="text-info-detail">
+                    <i class="fas fa-atlas icon"></i> {{ 'NEWARRIVALS.BOOKONLINE' | translate}}
+                </span>
+            </p>
+        </div>
+    </div>
+</div>

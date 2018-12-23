@@ -1,23 +1,24 @@
 <div class="row top">
-    <div class="col-md-9 col-sm-8 cot1">
-      <div class="row footer-section">
-        <div class="bottom">
-          <div class="col-md-12 footer-section" >
-            <ul class="footer-nav">
-              <a routerLink="/" >
-                <li [ngClass]="{'current-location': currentLocation =='/'}">{{'MENUFOOTER.MAP'| translate}}</li>
-              </a>
-              <a routerLink="/newarrivals" >
-                <li [ngClass]="{'current-location': currentLocation =='/newarrivals'}">{{'MENUFOOTER.BOOK'| translate}}</li>
-              </a>
-              <a routerLink="/infomations" >
-                <li [ngClass]="{'current-location': currentLocation =='/infomations' }">{{'MENUFOOTER.INFOMATION'| translate}}</li>
-              </a>
-            </ul>
-          </div>
+  <div class="col-md-9 col-sm-8 cot1">
+    <div class="row footer-section">
+      <div class="bottom">
+        <div class="col-md-12 footer-section">
+          <ul class="footer-nav">
+            <a routerLink="/" (click)="changeTitle()">
+              <li [ngClass]="{'current-location': currentLocation =='/'}" >{{'MENUFOOTER.MAP'| translate}}</li>
+            </a>
+            <a routerLink="/newarrivals" (click)="changeTitle()">
+              <li [ngClass]="{'current-location': currentLocation.indexOf('/newarrivals') != -1 || currentLocation =='/newarrivals'}" >{{'MENUFOOTER.BOOK'| translate}}</li>
+            </a>
+            <a routerLink="/infomations" (click)="changeTitle()">
+              <li [ngClass]="{'current-location': currentLocation =='/infomations' }" >{{'MENUFOOTER.INFOMATION'|
+                translate}}</li>
+            </a>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="col-md-3 col-sm-4 cot2">
-    </div>
   </div>
+  <div class="col-md-3 col-sm-4 cot2">
+  </div>
+</div>

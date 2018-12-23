@@ -1,3 +1,4 @@
+import { PageTitleService } from 'src/app/core/services/pagetitle.service';
 import { AppRoutingModule } from './app.routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -6,7 +7,6 @@ import { AppComponent } from './app.component';
 import { TranslateModule} from '@ngx-translate/core';
 import { HttpClientModule} from '@angular/common/http';
 import { Component } from '@angular/core';
-
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +20,7 @@ import { Component } from '@angular/core';
     TranslateModule.forRoot()
     
   ],
-  providers: [],
+  providers: [PageTitleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
