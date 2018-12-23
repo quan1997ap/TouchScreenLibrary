@@ -41,8 +41,8 @@ export const locale = {
       BOOKSHELF: 'Bookshelf',
       ROOMOCCUPIED: 'ROOM OCCUPIED',
       ROOMAVAILABLE: 'ROOM AVAILABLE',
-      PEOPLE:'Số người',
-      SEATS: 'Số ghế'
+      PEOPLE:'People',
+      SEATS: 'Seats'
     },
     NEWARRIVALS:{
       NEWARRIVALS: 'NEW ARRIVALS BOOK',

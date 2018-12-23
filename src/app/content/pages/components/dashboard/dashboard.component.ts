@@ -1,9 +1,10 @@
 import { PageTitleService } from './../../../../core/services/pagetitle.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, OnInit, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 declare var h337: any;
+
 //fix error use html in svg(angular)
 //http://embed.plnkr.co/EHPWvIN3UgXnkBv2884n/
 //https://stackoverflow.com/questions/47566743/to-allow-any-element-add-no-errors-schema-to-the-ngmodule-schemas-of-this-c
@@ -14,7 +15,7 @@ declare var h337: any;
   styleUrls: ['./dashboard.component.scss'],
 })
 
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit , AfterViewInit {
   infoDetail: any[] = [];
   currentZoneId: string;
   dataToSideBar: boolean = true;
@@ -36,7 +37,6 @@ export class DashboardComponent implements OnInit {
     public cd: ChangeDetectorRef,
     public titleService: PageTitleService,
   ) {
-
   }
 
   ngOnInit() {
@@ -69,6 +69,13 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  ngAfterViewInit(){
+   setTimeout(() => {
+    this.drawHeatmap();
+   },5000)
+    
+  }
+
   activeDetailZone(_zoneId) {
     //show DetailZone when user click on map 3d
     document.getElementById('floor').style.opacity = ' 0.2 ';
@@ -76,7 +83,6 @@ export class DashboardComponent implements OnInit {
     let zondID1 = document.getElementById(this.currentZoneId);
     zondID1.classList.add('active-zone');
 
-    console.log(_zoneId);
     this.titleService.subject.next(_zoneId);
 
     switch (_zoneId) {
@@ -100,10 +106,12 @@ export class DashboardComponent implements OnInit {
     if (zondID2 != undefined) {
       zondID2.classList.remove('active-zone');
     }
-
+    this.showMap3d();
     // sideBar back to floor + changeTitle Header
     this.titleService.subject.next('MAP');
     this.dataChangeSideBar = { stateGlossaryZoneName: true, zoneId: 'floor' };
+
+
   }
 
   showHeatMap() {
@@ -114,7 +122,7 @@ export class DashboardComponent implements OnInit {
 
   drawHeatmap() {
     // ve heatmpa chia lm 100*100 o
-    let coverheatmap = document.getElementById("heatmap");
+    let coverheatmap = document.getElementById("cover-heatmap");
     let row = 100;
     let column = 100;
     let heightHeatMap, widthHeatMap;
@@ -197,8 +205,6 @@ export class DashboardComponent implements OnInit {
 
     dataPoints = [dataPoint, dataPoint1, dataPoint2, dataPoint3, dataPoint4, dataPoint5, dataPoint6, dataPoint7, dataPoint8, dataPoint9];
 
-    //var dataPoints = [dataPoint, dataPoint1, dataPoint2, dataPoint3];
-    //var dataPoints = [dataPoint4]
     console.log(widthHeatMap + " -" + widthHeatMap / row);
     console.log(heightHeatMap + " -" + heightHeatMap / column);
     dataPoints.forEach(function (item, index) {
@@ -211,10 +217,13 @@ export class DashboardComponent implements OnInit {
   };
 
   showNoiseMap() {
+    this.infoDetail = [, , , , , ];
     this.disableNoisemap = false;
     this.disableHeatmap = true;
     this.showMap2d();
-    this.drawHeatmap();
+    setTimeout(() => {
+      this.drawHeatmap();
+    },500)
   }
 
 
@@ -222,26 +231,25 @@ export class DashboardComponent implements OnInit {
     // switch map 2d or 3d
     let map3d = document.getElementById('map-3d');
     let map2d = document.getElementById('map-2d');
-    // if (map3d.style.display == 'none') {
-    //   map2d.style.display = 'none';
-    //   map3d.style.display = 'flex';
-    // } else {
-    //   map2d.style.display = 'flex';
-    //   map3d.style.display = 'none';
-    // }
-    map3d.style.display = 'flex';
+    map3d.style.display = 'none';
     map2d.style.display = 'flex';
-    
   }
+
+  showMap3d() {
+    // switch map 2d or 3d
+    let map3d = document.getElementById('map-3d');
+    let map2d = document.getElementById('map-2d');
+    map3d.style.display = 'flex';
+    map2d.style.display = 'none';
+  }
+
 
   // hien thi thong tin chi tiet (chi so)
   showInfoDetail(typeIndex: string) {
-    let map3d = document.getElementById('map-3d');
-    let map2d = document.getElementById('map-2d');
-    map2d.style.display = 'flex';
-    map3d.style.display = 'none';
 
     this.typeIndex = typeIndex;
+    this.disableHeatmap = true;
+    this.disableNoisemap = true;
     switch (typeIndex) {
       case 'AQI':
         this.disableHeatmap = true;
@@ -266,6 +274,6 @@ export class DashboardComponent implements OnInit {
       default:
         console.log('Vùng chọn không xác định');
     }
-    this.back();
+    this.showMap2d();
   }
 }
