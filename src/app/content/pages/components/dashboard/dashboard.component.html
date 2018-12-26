@@ -6,7 +6,7 @@
                     <li>
                         <button type="button" class="btn btn-primary" (click)="back()"><i class="fas fa-undo-alt fico"></i></button>
                     </li>
-                    <div>
+                    <div [ngStyle]="{'display': disableMenuIndex ? 'none' : 'block'}">
                         <li [ngClass]="{'active': typeIndex=='AQI'}">
                             <button type="button" class="btn btn-menu btn-normal" (click)="showInfoDetail('AQI')"><i class="fab fa-envira fico"></i></button><span
                                 class="menu-button">{{'DASHBOARD.AQI' | translate }}</span>

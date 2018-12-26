@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit , AfterViewInit {
   aqiData: any;
   disableHeatmap = true;
   disableNoisemap = true;
+  disableMenuIndex = false;
   typeIndex: string;
   subscriptionChangeTitle: Subscription;
 
@@ -78,6 +79,7 @@ export class DashboardComponent implements OnInit , AfterViewInit {
 
   activeDetailZone(_zoneId) {
     //show DetailZone when user click on map 3d
+    this.disableMenuIndex = true;
     document.getElementById('floor').style.opacity = ' 0.2 ';
     this.currentZoneId = _zoneId;
     let zondID1 = document.getElementById(this.currentZoneId);
@@ -101,6 +103,7 @@ export class DashboardComponent implements OnInit , AfterViewInit {
   }
 
   back() {
+    this.disableMenuIndex = false;
     document.getElementById('floor').style.opacity = '1';
     let zondID2 = document.getElementById(this.currentZoneId);
     if (zondID2 != undefined) {
